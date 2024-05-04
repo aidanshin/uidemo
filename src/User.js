@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import socketIOClient from "socket.io-client";
 import './User.css'
+import config from './config';
 
-const ENDPOINT = "http://127.0.0.1:50000"; 
+const ENDPOINT = config.ENDPOINT; 
 
 const User = () => {
   const [data, setData] = useState([]);

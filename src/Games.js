@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import socketIOClient from "socket.io-client";
 import './Games.css'
 import ResultModal from './ResultModal';
+import config from './config';
+
 //https://coolors.co/palettes/trending
-const ENDPOINT = "http://127.0.0.1:50000"; 
-const games = ["Coin Flip", "Dice Roll"]
+
+const ENDPOINT = config.ENDPOINT; 
+//const games = ["Coin Flip", "Dice Roll"]
 
 const Games = () => {
   const [data, setData] = useState([]);
@@ -73,6 +76,7 @@ const Games = () => {
             {Object.entries(games).map(([id, time])=> (
             <div key={id} className='game-card'>
                  <h1 className='game-title'>COIN FLIP</h1>
+                 {/* POTENTIAL TO MAKE THE TIME A TIMER COUNTDOWN */}
                  <p className='game-pot'>{time}</p>
                  <div className='game-pick-selection'>
                    <button
@@ -103,8 +107,8 @@ const Games = () => {
                 value={bet}
                 onChange={handleInputChange}
               />
-              <button className="game-bet-button" onClick={placeBet(id)} disabled={!pick || isNaN(bet)}>BET</button>
-              <button className="game-bet-button" onClick={() => setShowResults(true)}> RESULTS </button>
+              <button className="game-bet-button" onClick={placeBet(id)} disabled={!pick || isNaN(bet) || bet === ""}>BET</button>
+              <button className="game-bet-button" onClick={() => setShowResults(true)}> FLIP </button>
           </div>
           ))}
           </div>
