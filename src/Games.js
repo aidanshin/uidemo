@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import socketIOClient from "socket.io-client";
 import './Games.css'
 import ResultModal from './ResultModal';
-
+//https://coolors.co/palettes/trending
 const ENDPOINT = "http://127.0.0.1:50000"; 
 const games = ["Coin Flip", "Dice Roll"]
 
