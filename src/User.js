@@ -12,16 +12,19 @@ const User = () => {
     const socket = socketIOClient(ENDPOINT);
     socket.on("user_updated", (user) => {
       console.log(user)
-      if(user) {
-        const [bal] = user.user;
-        setBalance(bal)
+      if (user && Array.isArray(user)) {
+        const [bal] = user;
+        setBalance(bal);
       }
     });
 
     fetchUser();
 
-    return () => {socket.disconnect()};
+    return () => {
+      socket.disconnect();
+    };
   }, []);
+
 
   const fetchUser = () => {
     fetch('/user')
