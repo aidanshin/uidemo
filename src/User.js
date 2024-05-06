@@ -41,7 +41,7 @@ const User = () => {
 
   return (
     <div className="user-layout">
-      <h1 className='mainuser-title'>User</h1>
+      <h1 className='mainuser-title'>USER</h1>
       <hr className='mainuser-hr'></hr>
       <div className="mainuser-info">
           <div> BALANCE: {balance}</div>
