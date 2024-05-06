@@ -23,7 +23,7 @@ const App = () => {
 
     fetchMembers();
 
-    return () => socket.disconnect();
+    return () => {socket.disconnect()};
   }, []);
 
   const fetchMembers = () => {

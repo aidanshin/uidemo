@@ -6,45 +6,48 @@ import config from './config';
 const ENDPOINT = config.ENDPOINT; 
 
 const User = () => {
-  const [data, setData] = useState([]);
-  
+  const [balance, setBalance] = useState(0);
+
   useEffect(() => {
     const socket = socketIOClient(ENDPOINT);
     socket.on("user_updated", (user) => {
-      setData(user);
       console.log(user)
+      if(user) {
+        const [bal] = user.user;
+        setBalance(bal)
+      }
     });
 
     fetchUser();
 
-    return () => socket.disconnect();
+    return () => {socket.disconnect()};
   }, []);
 
   const fetchUser = () => {
     fetch('/user')
       .then(res => res.json())
       .then(data => {
-        setData(data.user);
-        console.log(data);
+        console.log(data)
+        if(data) {
+          const [bal] = data.user
+          setBalance(bal);
+        }
       })
       .catch(error => {
         console.error('Error fetching data:', error);
       });
   };
 
+
   return (
     <div className="user-layout">
       <h1 className='mainuser-title'>User</h1>
       <hr className='mainuser-hr'></hr>
-      <div>
-        {data.map((user, index) => (
-            <div className="mainuser-info" key={index}>
-                <div> BALANCE: {user.balance}</div>
-            </div>
-    ))}
+      <div className="mainuser-info">
+          <div> BALANCE: {balance}</div>
       </div>
     </div>
   );
 }
 
-export default User
+export default User;

@@ -2,6 +2,15 @@ import React, { useState, useEffect } from 'react'
 import ReactDom from 'react-dom'
 import './ResultModal.css'
 
+const resultMessage = (winAmount, bet) => {
+    winAmount = Number(winAmount);
+    if(winAmount === 0) {
+        return `YOU LOST: ${bet}`
+    } else {
+        return `YOU WIN: ${winAmount}`
+    }
+}
+
 export default function ResultModal({open, onClose, pick, bet, result, winAmount}) {
   const [showResultMessage, setShowResultMessage] = useState(false);
   
@@ -11,7 +20,7 @@ export default function ResultModal({open, onClose, pick, bet, result, winAmount
             setShowResultMessage(true);
         }, 5000);
     }
-  }, []);
+  }, [result]);
 
   if (!open) return null;
 
@@ -26,12 +35,14 @@ export default function ResultModal({open, onClose, pick, bet, result, winAmount
             </div>
 
             
-            <div className={`modal-coin ${result}`}>
-                <div className='modal-coin-head'>HEAD</div>
-                <div className='modal-coin-tail'>TAIL</div>
+            <div className="modal-coinresult">
+                <div className={`modal-coin ${result}`}>
+                    <div className='modal-coin-head'>HEAD</div>
+                    <div className='modal-coin-tail'>TAIL</div>
+                </div>
                 {showResultMessage && 
                 (<div className='result-display'>
-                    YOU WON {winAmount}
+                    {resultMessage(winAmount, bet)}
                     <button className="modal-header-exit-button" onClick={onClose}>EXIT</button>
                 </div>)}
             </div>

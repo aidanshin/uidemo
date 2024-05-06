@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './App.css'
 import Members from './Members'
 import Games from './Games'
@@ -7,6 +7,7 @@ import User from './User'
 function App() {
   // const width = window.innerWidth;
   // const height = window.innerHeight;
+  // const [updateBalance, setUpdateBalance] = useState(true)
 
 
   return (
