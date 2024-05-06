@@ -43,6 +43,7 @@ const Games = () => {
     });
 
     socket.on("results_updated", (results) => {
+      console.log("RESULT:", results)
       const r = Object.entries(results[0])[0];
       const id = r[0];
       const [isWin, winAmount] = r[1];
