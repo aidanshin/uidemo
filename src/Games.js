@@ -104,6 +104,7 @@ const Games = () => {
   const TIME_STYLE = {
     fontSize: "225%",
     marginBottom: "5%",
+    color: "#c77dff",
   }
   
 
@@ -121,8 +122,8 @@ const Games = () => {
                    <button
                   onClick={() => setPick(prevPick => ({...prevPick, [id] : 'HEAD'}))}
                   style = {{
-                    backgroundColor: pick[id] === 'HEAD' ? 'black' : 'aliceblue',
-                    color: pick[id] === 'HEAD' ? 'aliceblue' : 'black'
+                    backgroundColor: pick[id] === 'HEAD' ? '#3c096c' : '#c77dff',
+                    color: pick[id] === 'HEAD' ? '#c77dff' : '#3c096c'
                   }} 
                   className='game-pick-button'
                 >
@@ -131,8 +132,8 @@ const Games = () => {
                 <button 
                   onClick={() => setPick(prevPick => ({...prevPick, [id] : 'TAIL'}))}
                   style = {{
-                    backgroundColor: pick[id] === 'TAIL' ? 'black' : 'aliceblue',
-                    color: pick[id] === 'TAIL' ? 'aliceblue' : 'black'
+                    backgroundColor: pick[id] === 'TAIL' ? '#3c096c' : '#c77dff',
+                    color: pick[id] === 'TAIL' ? '#c77dff' : '#3c096c'
                   }} 
                   className='game-pick-button'
                 >

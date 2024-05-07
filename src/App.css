@@ -10,17 +10,19 @@ html {
   width: 100vw;
   margin: 0;
   grid-template-rows: 10% 90%;
-  background-color: aliceblue;
+  background-color: #f9f9f9;
 }
 
 .title {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   border-radius: 2px;
   box-sizing: border-box;
+  background-color: #10002b;
+  color: #e0aaff;
 }
 
 .screen {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   border-radius: 2px;
   box-sizing: border-box;
   display: grid;
@@ -28,22 +30,25 @@ html {
 }
 
 .left-item {
-  border: 2px solid green;
+  /* border: 2px solid green; */
   border-radius: 2px;
   box-sizing: border-box;
+  background-color: #10002b;
 }
 
 .middle-item {
-  border: 2px solid cyan;
+  /* border: 2px solid cyan; */
   border-radius: 2px;
   box-sizing: border-box;
   overflow-y: auto;
+  background-color: #240046;
 }
 
 .right-item {
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
   border-radius: 2px;
   box-sizing: border-box;
+  background-color: #10002b;
 }
 
 .title {

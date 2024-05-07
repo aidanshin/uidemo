@@ -6,11 +6,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -45%);
-    background-color: aliceblue;
+    background-color: #10002b;
     padding: 50px;
     z-index: 1000;
-    color: black;
-    border: 2px solid black;
+    color: #e0aaff;
+    border: 2px solid #e0aaff;
 
     display: grid;
     grid-template-rows: 20% 60% 20%;
@@ -29,7 +29,7 @@
     margin-bottom: 0%;
     width: 90%;
     border: 0;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #e0aaff;
 }
 
 .modal-header-title {
@@ -49,8 +49,9 @@
 }
 
 .modal-header-exit-button {
-    background-color: aliceblue;
-    border: 2px solid black;
+    background-color: #10002b;
+    border: 2px solid #e0aaff;
+    color: #e0aaff;
     padding: 12px 20px;
     cursor: pointer;
     font-size: 20px;
@@ -66,7 +67,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
+    border: 2px solid #e0aaff;
+    background-color: #10002b;
     margin-left: 10%;
     margin-right: 10%;
     font-size: 30px;
@@ -93,13 +95,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: blue;
+    background-color: #9d4edd;
     border: 2px solid black;
     border-radius: 50%;
     width: 200px;
     height: 200px;
     font-size: 50px;
-    color: aliceblue;
+    color: #e0aaff;
 
     position: absolute;
     backface-visibility: hidden;
@@ -112,13 +114,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
+    background-color: #3c096c;
     border: 2px solid black;
     border-radius: 50%;
     width: 200px;
     height: 200px;
     font-size: 50px;
-    color: aliceblue;
+    color: #e0aaff;
 
     position: absolute;
     backface-visibility: hidden;
@@ -175,14 +177,15 @@
     width: 500px;
     max-width: 500px;
     height: 150px;
-    background-color: aliceblue;
+    background-color: #10002b;
+    color: #e0aaff;
     opacity: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 50px;
-    border: 2px solid black;
+    border: 2px solid #e0aaff;
     /* transform: translateY(180deg) rotateY(90); */
     transition: transform 1s ease-in;
 }
