@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function CountdownTimer({time, TIME_STYLE, checkTimerValue}) {
+function CountdownTimer({time, TIME_STYLE, checkTimerValue, id}) {
   const [timeDiff, setTimeDiff] = useState(0);
 
   useEffect(() => {
@@ -11,7 +11,7 @@ function CountdownTimer({time, TIME_STYLE, checkTimerValue}) {
       const difference = endTime - now;
       setTimeDiff(Math.floor(difference / 1000));
 
-      checkTimerValue(timeDiff)
+      checkTimerValue(timeDiff, id)
       
       if (difference < 0) {
         clearInterval(timer);
@@ -20,7 +20,7 @@ function CountdownTimer({time, TIME_STYLE, checkTimerValue}) {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [time, timeDiff, checkTimerValue]);
+  }, [time, timeDiff, checkTimerValue, id]);
 
   const formatTime = (time) => {
     // const hours = Math.floor(time / 3600);

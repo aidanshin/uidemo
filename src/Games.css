@@ -1,9 +1,12 @@
+.game-parent-layout {
+    overflow-y: visible;
+}
+
 .game-layout {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     justify-content: flex-start;
-    gap: 10%;
-    flex-grow: 1;
+    gap: 5px;
 }
 
 .game-card {
@@ -12,8 +15,8 @@
     border: 2px solid black;
     flex-direction: column;
     align-items: center;
-    min-width: 5%;
-    min-height: 10%;
+    /* min-width: 5%;
+    min-height: 10%; */
     margin-bottom: 5%;
     margin-top: 10px;
     margin-left: 2%;
@@ -89,6 +92,58 @@
 }
 
 .game-bet-button[disabled]:active {
+    transform: translateY(0px);
+}
+
+.game-flip-button {
+    width: 80%;
+    border: 2px solid black;
+    background-color: aliceblue;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    animation: flash-green 1s infinite alternate;
+}
+
+@keyframes flash-green {
+    0% {
+        border-color: black;
+        color: black;
+    }
+
+    100% {
+        border-color: green;
+        color: green;
+    }
+}
+
+.game-flip-button:hover {
+    background-color: black;
+    border-color: aliceblue;
+    color: aliceblue;
+    animation: none;
+}
+
+.game-flip-button:active {
+    transform: translateY(4px);
+}
+
+.game-flip-button[disabled] {
+    cursor: not-allowed;
+    background-color: aliceblue;
+    transition-duration: 0;
+    animation: none;
+}
+
+.game-flip-button[disabled]:hover {
+    background-color: aliceblue;
+    color: red;
+    border-color: red;
+    /* cursor: not-allowed; */
+}
+
+.game-flip-button[disabled]:active {
     transform: translateY(0px);
 }
 
